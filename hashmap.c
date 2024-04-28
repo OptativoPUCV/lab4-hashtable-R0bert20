@@ -110,16 +110,16 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
     if(map == NULL || map->buckets == NULL) return NULL;
-    long posicion = 0;
-    while(posicion<map->capacity){
-      if(map->buckets[posicion]!=NULL && map->buckets[posicion]->key!=NULL){
-        map->current=posicion;
+    while(map->current != -1){
+      if(map->buckets[map->current]!=NULL && map->buckets[map->current]->key!=NULL){
         return map->buckets[map->current];
       }
       map->current++;
+      map->current%=map->capacity;
     }
-    
+    return NULL;
 }
+
 
 Pair * nextMap(HashMap * map) {
 
