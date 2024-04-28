@@ -122,14 +122,15 @@ Pair * firstMap(HashMap * map) {
 
 
 Pair * nextMap(HashMap * map) {
-    if(map == NULL || map->buckets == NULL) return NULL;
-    long posicion = map->current+1;
-    while(posicion!=map->current){
-      if(map->buckets[posicion]!=NULL && map->buckets[posicion]->key!=NULL){
-        map->current=posicion;
-        return map->buckets[posicion];
+    if (map == NULL || map->buckets == NULL || map->capacity <= 0)return NULL;
+
+    long start = (map->current + 1) % map->capacity;  
+  for (int i = 0; i < map->capacity; i++) {
+      long posicion = (start + i) % map->capacity;  
+      if (map->buckets[posicion] != NULL && map->buckets[posicion]->key != NULL) {
+          map->current = posicion;  
+          return map->buckets[posicion];
       }
-      posicion++;
-    }
-    return NULL;
+  }
+  return NULL;
 }
