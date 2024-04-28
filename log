@@ -40,3 +40,14 @@ Sun 28 Apr 2024 12:39:03 AM UTC:
  tests:  8|3
 total_score: 40/70
 92b28cc
+Sun 28 Apr 2024 12:40:58 AM UTC: 
+ hashmap.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:109:10: error: statement with no effect [-Werror=unused-value]
+  109 |       map->current;
+      |       ~~~^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+4dace6f
