@@ -57,3 +57,9 @@ Sun 28 Apr 2024 12:41:49 AM UTC:
  tests:  8|3
 total_score: 40/70
 fd264f4
+Sun 28 Apr 2024 12:43:20 AM UTC: 
+ hashmap.c | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+ tests:  9|2
+total_score: 50/70
+981a63e
